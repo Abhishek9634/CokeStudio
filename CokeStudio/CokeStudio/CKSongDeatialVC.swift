@@ -22,15 +22,20 @@ class CKSongDeatialVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /************************************************************
+         FETCHING WITH LOCAL URL
+         *************************************************************/
          let songURL = CKUtility.localFilePathForUrl(previewUrl: self.song?.localURL as! String)
         
         do {
-            
+            /************************************************************
+             CONFIGURING AUDIO SESSION AND INTIALIZING AUDIO PLAYER OBJECT
+             *************************************************************/
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             try AVAudioSession.sharedInstance().setActive(true)
             self.audioPlayerObj = try AVAudioPlayer(contentsOf: songURL!)
-//            self.audioPlayerObj?.prepareToPlay()
-//            self.audioPlayerObj?.play()
+            self.audioPlayerObj?.prepareToPlay()
+            self.audioPlayerObj?.play()
         } catch let error as NSError {
             
             print(error.localizedDescription)
@@ -47,6 +52,10 @@ class CKSongDeatialVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        /************************************************************
+         INTIALIZING SUBVIEW VALUES
+         *************************************************************/
+        
         self.songName?.text = self.song?.song as String?
         self.artistsName?.text = self.song?.artists as String?
         if (song?.cover_image != nil) {
@@ -55,12 +64,20 @@ class CKSongDeatialVC: UIViewController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+         super.viewWillAppear(animated)
+         self.audioPlayerObj?.stop()
+    }
+    
     //====================================================================================================================================
     // MUSIC BUTTON ACTIONS
     //====================================================================================================================================
     
     @IBAction func rewindAction(_ sender: Any) {
         
+        /************************************************************
+         SONG REWIND
+         *************************************************************/
         var time = (self.audioPlayerObj?.currentTime)! as TimeInterval
         time = time - 3.0;
         if (time <= 0)
@@ -86,6 +103,9 @@ class CKSongDeatialVC: UIViewController {
    
     @IBAction func forwardAction(_ sender: Any) {
         
+        /************************************************************
+         SONG FORWARD
+         *************************************************************/
         var time = (self.audioPlayerObj?.currentTime)! as TimeInterval
         time = time + 3.0;
         if (time > (self.audioPlayerObj?.duration)!)

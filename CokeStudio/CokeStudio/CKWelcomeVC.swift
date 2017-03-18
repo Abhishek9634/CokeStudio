@@ -10,6 +10,9 @@ import UIKit
 
 class CKWelcomeVC: UIViewController {
 
+    /**************************************************************************
+     THIS CLASS FOR INTIAL WELCOME VIEW
+     ***************************************************************************/
     
     @IBOutlet weak var openButton: UIButton!
     

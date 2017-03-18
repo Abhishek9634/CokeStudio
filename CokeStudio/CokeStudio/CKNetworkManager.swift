@@ -10,6 +10,10 @@ import UIKit
 
 class CKNetworkManager: NSObject {
 
+    /**********************************************************************************
+     NETWORK SERVICE CLASS : DEFINE WHATEVER NETWORK HTTP POST/GET REQUEST CALLS HERE
+     ***********************************************************************************/
+    
     public var responseArray : NSMutableArray?
     public var songsList : NSArray?
     

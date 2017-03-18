@@ -10,6 +10,10 @@ import UIKit
 
 class CKSong: NSObject {
 
+    /**************************************************************************
+     THIS IS A MODEL/GENERIC CLASS FOR SONG JSON DATA
+     ***************************************************************************/
+    
     public var song : NSString?
     public var url : NSString?
     public var artists : NSString?

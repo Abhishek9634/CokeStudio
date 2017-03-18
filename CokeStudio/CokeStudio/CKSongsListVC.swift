@@ -86,9 +86,7 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
         }
         
         tableCell.artistLabel.text = song.artists as String?
-        
         tableCell.favouriteButton?.setImage(image, for: .normal)
-        
         tableCell.playButton.isEnabled = (song.localURL != nil)
         
         return tableCell
@@ -101,10 +99,14 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
     }
     
     //====================================================================================================================================
-    // TABLE CELL DELEGATE
+    // TABLE CELL DELEGATE : TAP CALLBACKS
     //====================================================================================================================================
     
     internal func didTapFavouriteButton(cell: CKTableCell) {
+        
+        /************************************************************
+         TAP FOR FAVOURITE SONG
+         *************************************************************/
         
         let indexPath = self.songTableView.indexPath(for: cell)
         let song = filteredList?.object(at: (indexPath?.row)!) as! CKSong
@@ -120,6 +122,10 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
     
     internal func didTapPlayButton(cell: CKTableCell) {
         
+        /**************************************************************************
+         TAP FOR PLAYING : THIS WILL ACTIVE ONLY WHEN SONG DOWNLOAD COMPLETELY
+         ***************************************************************************/
+        
         let indexPath = self.songTableView.indexPath(for: cell)
         let song = filteredList?.object(at: (indexPath?.row)!) as! CKSong
         
@@ -131,6 +137,9 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
     
     internal func didTapDownloadButton(cell: CKTableCell) {
         
+        /**************************************************************************
+         TAP FOR DOWNLOAD : DOWNLOAD REMOTE DATA AND SAVE TO DOC DIRECTORY
+         ***************************************************************************/
         cell.loadingIcon.startAnimating()
         let indexPath = self.songTableView.indexPath(for: cell)
         let song = filteredList?.object(at: (indexPath?.row)!) as! CKSong
@@ -167,7 +176,7 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
     }
     
     //====================================================================================================================================
-    // SONG DOWNLOAD TASK
+    // SONG DOWNLOAD TASK : NSURLSESSION
     //====================================================================================================================================
     
     lazy var downloadsSession: URLSession = {

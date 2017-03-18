@@ -16,6 +16,10 @@ enum RESPONSE_CODE : Int {
 
 class CKHTTPResponse: NSObject {
 
+    /**********************************************************************************
+     HTTP RESPONSE CLASS : FOR ALL TYPE OF HTTP REQUEST'S RESPONSE
+     ***********************************************************************************/
+    
     class func responseWithRequest(request:NSMutableURLRequest , requestTitle:String , completion : @escaping (_ json:Any, _ error:NSError?) -> Void) {
         
         let task : URLSessionDataTask = URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in
