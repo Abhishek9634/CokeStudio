@@ -79,7 +79,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="138"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lrQ-sy-0OX" id="CFF-wz-TCc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="138"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music_default" translatesAutoresizingMaskIntoConstraints="NO" id="mmf-wB-KKD">
@@ -128,6 +128,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="JYP-qE-u94">
+                                                    <rect key="frame" x="176" y="58" width="20" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="mmf-wB-KKD" firstAttribute="bottom" secondItem="jUQ-0H-IoO" secondAttribute="bottom" id="Bdc-pp-DE5"/>
@@ -156,6 +160,7 @@
                                             <outlet property="artistLabel" destination="U2W-UD-JHx" id="a8g-gb-Km7"/>
                                             <outlet property="downloadButton" destination="GyY-ow-wMH" id="fvC-c8-vjf"/>
                                             <outlet property="favouriteButton" destination="tbi-qf-LDR" id="hgv-L2-fc1"/>
+                                            <outlet property="loadingIcon" destination="JYP-qE-u94" id="VcN-sc-oBt"/>
                                             <outlet property="playButton" destination="cnF-1P-fMZ" id="5AR-y3-9q2"/>
                                             <outlet property="songImgView" destination="mmf-wB-KKD" id="RyD-tP-11h"/>
                                             <outlet property="songName" destination="jUQ-0H-IoO" id="gpC-nM-6ze"/>

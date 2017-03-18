@@ -79,6 +79,8 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
         
         tableCell.favouriteButton?.setImage(image, for: .normal)
         
+        tableCell.playButton.isEnabled = (song.localURL != nil)
+        
         return tableCell
     }
     
@@ -119,6 +121,7 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
     
     internal func didTapDownloadButton(cell: CKTableCell) {
         
+        cell.loadingIcon.startAnimating()
         let indexPath = self.songTableView.indexPath(for: cell)
         let song = filteredList?.object(at: (indexPath?.row)!) as! CKSong
         
@@ -126,21 +129,29 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
         
         let downloadTask : URLSessionDownloadTask = self.downloadsSession.downloadTask(with: songURL as! URL) { (location, response, error) in
             
-            let time = NSNumber(value:(NSDate().timeIntervalSince1970 * 1000))
-            let fileName = NSString(format:"%@_music.mp3",time)
-            let documentsUrl:URL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as URL!
-            let destinationFileUrl = documentsUrl.appendingPathComponent(fileName as String)
-            
-            do {
-                try FileManager.default.copyItem(at: location!, to: destinationFileUrl)
-            } catch (let writeError) {
-                print("Error creating a file \(destinationFileUrl) : \(writeError)")
+            if (error == nil) {
+                
+                let time = NSNumber(value:(NSDate().timeIntervalSince1970 * 1000))
+                let fileName = NSString(format:"%@_music.mp3",time)
+                let documentsUrl:URL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as URL!
+                let destinationFileUrl = documentsUrl.appendingPathComponent(fileName as String)
+                
+                do {
+                    try FileManager.default.copyItem(at: location!, to: destinationFileUrl)
+                } catch (let writeError) {
+                    print("Error creating a file \(destinationFileUrl) : \(writeError)")
+                }
+                
+                print("DOWNLOAD FINISHED \(location)")
+                print("DOWNLOAD FINISHED \(destinationFileUrl)")
+                
+                song.localURL = destinationFileUrl.path as NSString?
+                
             }
-            
-            print("DOWNLOAD FINISHED \(location)")
-            print("DOWNLOAD FINISHED \(destinationFileUrl)")
-            
-            song.localURL = destinationFileUrl.path as NSString?
+            DispatchQueue.main.async {
+                cell.playButton.isEnabled = (song.localURL != nil)
+                cell.loadingIcon.stopAnimating()
+            }
         }
         
         downloadTask.resume()

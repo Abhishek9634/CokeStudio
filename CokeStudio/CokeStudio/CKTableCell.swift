@@ -27,6 +27,7 @@ class CKTableCell: UITableViewCell {
     @IBOutlet weak var favouriteButton: UIButton!
     @IBOutlet weak var artistLabel: UILabel!
     
+    @IBOutlet weak var loadingIcon: UIActivityIndicatorView!
     
     weak var delegate: CKTableCellDelegate?
     
