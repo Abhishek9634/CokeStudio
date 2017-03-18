@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, CKTableCellDelegate {
 
     
     @IBOutlet weak var songTableView: UITableView!
     @IBOutlet weak var songSearchBar: UISearchBar!
+    
+    var songList : NSMutableArray?                  // BASE ARRAY
+    var filteredList : NSMutableArray?              // FILTER ARRAY
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +26,8 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
         self.songTableView.delegate = self
         self.songTableView.dataSource = self
         self.songSearchBar.delegate = self
+        
+        self.filteredList = NSMutableArray(array : self.songList!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,7 +39,6 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
         super.viewWillAppear(animated)
     }
     
-    
     //====================================================================================================================================
     // TABLE VIEW DELEGATE
     //====================================================================================================================================
@@ -44,27 +49,27 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let tableCell = tableView.dequeueReusableCell(withIdentifier: "SBTableCell") as! SBTableCell
+        let tableCell = tableView.dequeueReusableCell(withIdentifier: "CKTableCell") as! CKTableCell
         tableCell.delegate = self
         
-        let player = self.filteredList?.object(at: indexPath.row) as! SBPlayer
+        let song = self.filteredList?.object(at: indexPath.row) as! CKSong
         
         DispatchQueue.main.async {
-            tableCell.playerImageView?.layer.cornerRadius = (tableCell.playerImageView?.frame.size.width)!/2;
-            tableCell.playerImageView?.layer.masksToBounds = true
+            tableCell.songImgView?.layer.cornerRadius = (tableCell.songImgView?.frame.size.width)!/2;
+            tableCell.songImgView?.layer.masksToBounds = true
         }
         
-        tableCell.playerNameLabel?.text = player.name as String?
+        tableCell.songName?.text = song.song as String?
         
         var image = UIImage(named: "favourite_default.png")
-        if ((player.favourite!)) {
+        if ((song.favourite!)) {
             image = UIImage(named: "favourite_set.png")
         }
         
-        if (player.image != nil) {
+        if (song.cover_image != nil) {
             
-            let imageURL = NSURL(string : player.image as! String)
-            tableCell.playerImageView?.sd_setImage(with: imageURL as URL!, placeholderImage: UIImage(named: "user_default.png"))
+            let imageURL = NSURL(string : song.cover_image as! String)
+            tableCell.songImgView?.sd_setImage(with: imageURL as URL!, placeholderImage: UIImage(named: "music_default.png"))
         }
         
         tableCell.favouriteButton?.setImage(image, for: .normal)
@@ -74,31 +79,29 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let player = filteredList?.object(at: indexPath.row) as! SBPlayer
-        print("SELECTED_PLAYER : \((player.name)!)")
+        let song = filteredList?.object(at: indexPath.row) as! CKSong
+        print("SELECTED_SONG : \((song.song)!)")
         
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        let playerDetailVC = storyBoard.instantiateViewController(withIdentifier: "SBPlayerDetailVC") as! SBPlayerDetailVC
-        playerDetailVC.player = player
-        self.navigationController?.pushViewController(playerDetailVC, animated: true)
+        let songDetailVC = storyBoard.instantiateViewController(withIdentifier: "CKSongDeatialVC") as! CKSongDeatialVC
+        
+        self.navigationController?.pushViewController(songDetailVC, animated: true)
     }
     
     //====================================================================================================================================
     // TABLE CELL DELEGATE
     //====================================================================================================================================
     
-    internal func didTapFavouriteButton(cell: SBTableCell) {
+    internal func didTapFavouriteButton(cell: CKTableCell) {
         
-        let indexPath = self.playerTableView.indexPath(for: cell)
-        let player = filteredList?.object(at: (indexPath?.row)!) as! SBPlayer
+        let indexPath = self.songTableView.indexPath(for: cell)
+        let player = filteredList?.object(at: (indexPath?.row)!) as! CKSong
         player.favourite = !(player.favourite!)
         var image = UIImage(named: "favourite_default.png")
         
         if ((player.favourite!)) {
             image = UIImage(named: "favourite_set.png")
         }
-        
-        SBDBManager().updatEntity(id: player.id, flag: player.favourite!)
         
         cell.favouriteButton?.setImage(image, for: .normal)
     }
@@ -111,17 +114,17 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
         
         DispatchQueue.main.async {
             
-            let predicate = NSPredicate(format: "name contains[cd] %@ OR country contains[cd] %@", searchText, searchText)
+            let predicate = NSPredicate(format: "song contains[cd] %@", searchText)
             self.filteredList?.removeAllObjects()
-            let searcArray = self.playerList?.filtered(using: predicate)
+            let searcArray = self.songList?.filtered(using: predicate)
             self.filteredList?.addObjects(from: searcArray!)
             
             if (searchText.characters.count == 0) {
                 
-                self.filteredList?.addObjects(from: self.playerList?.mutableCopy() as! [Any])
+                self.filteredList?.addObjects(from: self.songList?.mutableCopy() as! [Any])
                 searchBar.resignFirstResponder()
             }
-            self.playerTableView.reloadData()
+            self.songTableView.reloadData()
         }
     }
     

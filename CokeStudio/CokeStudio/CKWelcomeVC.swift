@@ -23,8 +23,18 @@ class CKWelcomeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        CKNetworkManager().getSongs { (array, error) in
+        CKNetworkManager().getSongs { (arrayList, error) in
             
+             DispatchQueue.main.async {
+                let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+                let navigationVC = storyBoard.instantiateViewController(withIdentifier: "CKNavigationVC") as! UINavigationController
+                
+                let viewArray = navigationVC.viewControllers as NSArray
+                let songListVC = viewArray.object(at: 0) as! CKSongsListVC
+                songListVC.songList = NSMutableArray(array: arrayList!)
+                
+                self.present(navigationVC, animated: true, completion: nil)
+            }
         }
     }
 

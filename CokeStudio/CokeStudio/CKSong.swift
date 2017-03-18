@@ -14,6 +14,7 @@ class CKSong: NSObject {
     public var url : NSString?
     public var artists : NSString?
     public var cover_image : NSString?
+    public var favourite : Bool?
     
     override init() {
         
@@ -38,6 +39,6 @@ class CKSong: NSObject {
         self.url = dictionary["url"] as? NSString
         self.artists = dictionary["artists"] as? NSString
         self.cover_image = dictionary["cover_image"] as? NSString
-
+        self.favourite = false
     }
 }

@@ -41,6 +41,7 @@ class CKTableCell: UITableViewCell {
     }
 
     @IBAction func favouriteAction(_ sender: Any) {
+        self.delegate?.didTapFavouriteButton(cell: self)
     }
     
 }
