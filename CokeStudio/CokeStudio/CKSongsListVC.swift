@@ -86,11 +86,6 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
         
         let song = filteredList?.object(at: indexPath.row) as! CKSong
         print("SELECTED_SONG : \((song.song)!)")
-        
-        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        let songDetailVC = storyBoard.instantiateViewController(withIdentifier: "CKSongDeatialVC") as! CKSongDeatialVC
-        songDetailVC.song = song
-        self.navigationController?.pushViewController(songDetailVC, animated: true)
     }
     
     //====================================================================================================================================
@@ -115,22 +110,11 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
         
         let indexPath = self.songTableView.indexPath(for: cell)
         let song = filteredList?.object(at: (indexPath?.row)!) as! CKSong
-        let songURL = NSURL(string : song.url as! String)
-        print("playing \(songURL)")
         
-        var player : AVPlayer? = nil
-        do {
-        
-            let playerItem : AVPlayerItem = AVPlayerItem(url: songURL as! URL)
-            player = try AVPlayer(playerItem: playerItem)
-            player?.volume = 1.0
-            player?.play()
-        } catch let error as NSError {
-            player = nil
-            print(error.localizedDescription)
-        } catch {
-            print("AVAudioPlayer init failed")
-        }
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        let songDetailVC = storyBoard.instantiateViewController(withIdentifier: "CKSongDeatialVC") as! CKSongDeatialVC
+        songDetailVC.song = song
+        self.navigationController?.pushViewController(songDetailVC, animated: true)
     }
     
     internal func didTapDownloadButton(cell: CKTableCell) {
@@ -177,8 +161,6 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
         
         print("DOWNLOAD FINISHED \(location)")
         print("DOWNLOAD FINISHED \(destinationFileUrl)")
-        
-
         
         let localUrl = self.localFilePathForUrl(previewUrl: destinationFileUrl.path)
         do {
