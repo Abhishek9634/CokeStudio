@@ -11,7 +11,7 @@ import SDWebImage
 import AVFoundation
 import MediaPlayer
 
-class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, CKTableCellDelegate, URLSessionDownloadDelegate {
+class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, CKTableCellDelegate, URLSessionDownloadDelegate ,URLSessionDelegate {
 
     
     @IBOutlet weak var songTableView: UITableView!
@@ -124,7 +124,25 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
         
         let songURL = NSURL(string : song.url as! String)
         
-        let downloadTask : URLSessionDownloadTask = self.downloadsSession.downloadTask(with: songURL as! URL)
+        let downloadTask : URLSessionDownloadTask = self.downloadsSession.downloadTask(with: songURL as! URL) { (location, response, error) in
+            
+            let time = NSNumber(value:(NSDate().timeIntervalSince1970 * 1000))
+            let fileName = NSString(format:"%@_music.mp3",time)
+            let documentsUrl:URL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as URL!
+            let destinationFileUrl = documentsUrl.appendingPathComponent(fileName as String)
+            
+            do {
+                try FileManager.default.copyItem(at: location!, to: destinationFileUrl)
+            } catch (let writeError) {
+                print("Error creating a file \(destinationFileUrl) : \(writeError)")
+            }
+            
+            print("DOWNLOAD FINISHED \(location)")
+            print("DOWNLOAD FINISHED \(destinationFileUrl)")
+            
+            song.localURL = destinationFileUrl.path as NSString?
+        }
+        
         downloadTask.resume()
     }
     
@@ -133,7 +151,7 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
     //====================================================================================================================================
     
     lazy var downloadsSession: URLSession = {
-        let configuration = URLSessionConfiguration.background(withIdentifier: "sessionID")
+        let configuration = URLSessionConfiguration.default
         let session = URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
         return session
     }()
@@ -141,7 +159,6 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
         
         let progress = Float(totalBytesWritten)/Float(totalBytesExpectedToWrite)
-
         let totalSize = ByteCountFormatter.string(fromByteCount: totalBytesExpectedToWrite, countStyle: ByteCountFormatter.CountStyle.binary)
         print("PROGRESS \(String(format: "%.1f%% of %@", progress * 100, totalSize))")
     }
@@ -161,33 +178,8 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
         
         print("DOWNLOAD FINISHED \(location)")
         print("DOWNLOAD FINISHED \(destinationFileUrl)")
-        
-        let localUrl = self.localFilePathForUrl(previewUrl: destinationFileUrl.path)
-        do {
-            
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-            try AVAudioSession.sharedInstance().setActive(true)
-            self.audioPlayerObj = try AVAudioPlayer(contentsOf: localUrl!)
-            self.audioPlayerObj?.prepareToPlay()
-            self.audioPlayerObj?.volume = 1.0
-            self.audioPlayerObj?.play()
-        } catch let error as NSError {
-            
-            print(error.localizedDescription)
-        } catch {
-            print("AVAudioPlayer init failed")
-        }
     }
-    
-    func localFilePathForUrl(previewUrl: String) -> URL? {
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
-        if let url = NSURL(string: previewUrl), let lastPathComponent = url.lastPathComponent {
-            let fullPath = documentsPath.appendingPathComponent(lastPathComponent)
-            return URL(fileURLWithPath:fullPath)
-        }
-        return nil
-    }
-    
+
     //====================================================================================================================================
     // SEARCH BAR DELEGATE
     //====================================================================================================================================

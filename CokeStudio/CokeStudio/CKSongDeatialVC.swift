@@ -13,7 +13,7 @@ import AVFoundation
 class CKSongDeatialVC: UIViewController {
 
     public var song : CKSong?
-    public var audioPlayer : AVAudioPlayer?
+    public var audioPlayerObj : AVAudioPlayer?
     
     @IBOutlet weak var songName: UILabel?
     @IBOutlet weak var artistsName: UILabel?
@@ -21,15 +21,21 @@ class CKSongDeatialVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let rawURL : NSString = (self.song?.localURL != nil ? self.song?.localURL : self.song?.url)!
-        let songURL = NSURL(string : rawURL as String)
+        
+         let songURL = CKUtility.localFilePathForUrl(previewUrl: self.song?.localURL as! String)
         
         do {
-            self.audioPlayer = try AVAudioPlayer(contentsOf: songURL as! URL)
-        }
-        catch let error as NSError {
-            print("URL ERROR \(error), \(error.userInfo)")
+            
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            self.audioPlayerObj = try AVAudioPlayer(contentsOf: songURL!)
+//            self.audioPlayerObj?.prepareToPlay()
+//            self.audioPlayerObj?.play()
+        } catch let error as NSError {
+            
+            print(error.localizedDescription)
+        } catch {
+            print("AVAudioPlayer init failed")
         }
     }
 
@@ -57,15 +63,15 @@ class CKSongDeatialVC: UIViewController {
     }
     
     @IBAction func playAction(_ sender: Any) {
-        self.audioPlayer?.play()
+        self.audioPlayerObj?.play()
     }
     
     @IBAction func pauseAction(_ sender: Any) {
-        self.audioPlayer?.pause()
+        self.audioPlayerObj?.pause()
     }
     
     @IBAction func stopAction(_ sender: Any) {
-        self.audioPlayer?.stop()
+        self.audioPlayerObj?.stop()
     }
    
     @IBAction func forwardAction(_ sender: Any) {

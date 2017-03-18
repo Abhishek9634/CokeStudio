@@ -10,4 +10,12 @@ import UIKit
 
 class CKUtility: NSObject {
 
+    class func localFilePathForUrl(previewUrl: String) -> URL? {
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
+        if let url = NSURL(string: previewUrl), let lastPathComponent = url.lastPathComponent {
+            let fullPath = documentsPath.appendingPathComponent(lastPathComponent)
+            return URL(fileURLWithPath:fullPath)
+        }
+        return nil
+    }
 }
