@@ -13,6 +13,7 @@ import UIKit
 //====================================================================================================================================
 
 protocol CKTableCellDelegate: class {
+    
     func didTapFavouriteButton(cell: CKTableCell)
     func didTapPlayButton(cell: CKTableCell)
     func didTapDownloadButton(cell: CKTableCell)
@@ -43,7 +44,7 @@ class CKTableCell: UITableViewCell {
     }
     
     //====================================================================================================================================
-    // CELL BUTTON ACTIONS
+    // CELL BUTTON ACTIONS : CALLING RESPECTIVE DELEGATES
     //====================================================================================================================================
     
     @IBAction func playAction(_ sender: Any) {
