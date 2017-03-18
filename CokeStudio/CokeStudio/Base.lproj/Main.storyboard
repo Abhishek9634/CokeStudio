@@ -79,7 +79,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="138"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lrQ-sy-0OX" id="CFF-wz-TCc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="138"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music_default" translatesAutoresizingMaskIntoConstraints="NO" id="mmf-wB-KKD">
@@ -308,10 +308,10 @@
             </objects>
             <point key="canvasLocation" x="2568.8000000000002" y="138.98050974512745"/>
         </scene>
-        <!--NavigationVC-->
+        <!--Navigation Controller-->
         <scene sceneID="cq3-qB-yIa">
             <objects>
-                <navigationController storyboardIdentifier="CKNavigationVC" automaticallyAdjustsScrollViewInsets="NO" id="0X9-Jb-BU2" customClass="CKNavigationVC" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CKNavigationVC" automaticallyAdjustsScrollViewInsets="NO" id="0X9-Jb-BU2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sun-nT-XFe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
