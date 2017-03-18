@@ -11,6 +11,11 @@ import SDWebImage
 
 class CKSongDeatialVC: UIViewController {
 
+    public var song : CKSong?
+    @IBOutlet weak var songName: UILabel?
+    @IBOutlet weak var artistsName: UILabel?
+    @IBOutlet weak var songImage: UIImageView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,15 +27,30 @@ class CKSongDeatialVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.songName?.text = self.song?.song as String?
+        self.artistsName?.text = self.song?.artists as String?
+        if (song?.cover_image != nil) {
+            let imageURL = NSURL(string : self.song?.cover_image as! String)
+            self.songImage?.sd_setImage(with: imageURL as URL!, placeholderImage: UIImage(named: "music_default.png"))
+        }
     }
-    */
-
+    
+    
+    @IBAction func rewindAction(_ sender: Any) {
+    }
+    
+    @IBAction func playAction(_ sender: Any) {
+    }
+    
+    @IBAction func pauseAction(_ sender: Any) {
+    }
+    
+    @IBAction func stopAction(_ sender: Any) {
+    }
+   
+    @IBAction func forwardAction(_ sender: Any) {
+    }
 }

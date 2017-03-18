@@ -84,7 +84,7 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
         
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         let songDetailVC = storyBoard.instantiateViewController(withIdentifier: "CKSongDeatialVC") as! CKSongDeatialVC
-        
+        songDetailVC.song = song
         self.navigationController?.pushViewController(songDetailVC, animated: true)
     }
     
