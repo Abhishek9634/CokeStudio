@@ -15,6 +15,10 @@
 		4653EB461E7D3DEC005D7FCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4653EB441E7D3DEC005D7FCF /* LaunchScreen.storyboard */; };
 		4653EB511E7D3DEC005D7FCF /* CokeStudioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653EB501E7D3DEC005D7FCF /* CokeStudioTests.swift */; };
 		4653EB5C1E7D3DEC005D7FCF /* CokeStudioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653EB5B1E7D3DEC005D7FCF /* CokeStudioUITests.swift */; };
+		4653EB6B1E7D3EA9005D7FCF /* CKNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653EB6A1E7D3EA9005D7FCF /* CKNetworkManager.swift */; };
+		4653EB6D1E7D3EBB005D7FCF /* CKHTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653EB6C1E7D3EBB005D7FCF /* CKHTTPResponse.swift */; };
+		4653EB6F1E7D3ECF005D7FCF /* CKHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653EB6E1E7D3ECF005D7FCF /* CKHTTPRequest.swift */; };
+		4653EB731E7D4038005D7FCF /* CKSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653EB721E7D4038005D7FCF /* CKSong.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		4653EB571E7D3DEC005D7FCF /* CokeStudioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CokeStudioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4653EB5B1E7D3DEC005D7FCF /* CokeStudioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CokeStudioUITests.swift; sourceTree = "<group>"; };
 		4653EB5D1E7D3DEC005D7FCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4653EB6A1E7D3EA9005D7FCF /* CKNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKNetworkManager.swift; sourceTree = "<group>"; };
+		4653EB6C1E7D3EBB005D7FCF /* CKHTTPResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKHTTPResponse.swift; sourceTree = "<group>"; };
+		4653EB6E1E7D3ECF005D7FCF /* CKHTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKHTTPRequest.swift; sourceTree = "<group>"; };
+		4653EB721E7D4038005D7FCF /* CKSong.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKSong.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +108,14 @@
 			isa = PBXGroup;
 			children = (
 				4653EB381E7D3DEC005D7FCF /* AppDelegate.swift */,
-				4653EB3A1E7D3DEC005D7FCF /* ViewController.swift */,
 				4653EB3C1E7D3DEC005D7FCF /* Main.storyboard */,
 				4653EB421E7D3DEC005D7FCF /* Assets.xcassets */,
 				4653EB441E7D3DEC005D7FCF /* LaunchScreen.storyboard */,
 				4653EB471E7D3DEC005D7FCF /* Info.plist */,
 				4653EB3F1E7D3DEC005D7FCF /* CokeStudio.xcdatamodeld */,
+				4653EB711E7D4018005D7FCF /* CKViewController */,
+				4653EB701E7D400C005D7FCF /* CKModel */,
+				4653EB691E7D3E6E005D7FCF /* CKNetwork */,
 			);
 			path = CokeStudio;
 			sourceTree = "<group>";
@@ -126,6 +136,32 @@
 				4653EB5D1E7D3DEC005D7FCF /* Info.plist */,
 			);
 			path = CokeStudioUITests;
+			sourceTree = "<group>";
+		};
+		4653EB691E7D3E6E005D7FCF /* CKNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				4653EB6A1E7D3EA9005D7FCF /* CKNetworkManager.swift */,
+				4653EB6C1E7D3EBB005D7FCF /* CKHTTPResponse.swift */,
+				4653EB6E1E7D3ECF005D7FCF /* CKHTTPRequest.swift */,
+			);
+			name = CKNetwork;
+			sourceTree = "<group>";
+		};
+		4653EB701E7D400C005D7FCF /* CKModel */ = {
+			isa = PBXGroup;
+			children = (
+				4653EB721E7D4038005D7FCF /* CKSong.swift */,
+			);
+			name = CKModel;
+			sourceTree = "<group>";
+		};
+		4653EB711E7D4018005D7FCF /* CKViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4653EB3A1E7D3DEC005D7FCF /* ViewController.swift */,
+			);
+			name = CKViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,7 +232,7 @@
 				TargetAttributes = {
 					4653EB341E7D3DEB005D7FCF = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					4653EB4B1E7D3DEC005D7FCF = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -262,9 +298,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4653EB6B1E7D3EA9005D7FCF /* CKNetworkManager.swift in Sources */,
 				4653EB3B1E7D3DEC005D7FCF /* ViewController.swift in Sources */,
 				4653EB411E7D3DEC005D7FCF /* CokeStudio.xcdatamodeld in Sources */,
+				4653EB731E7D4038005D7FCF /* CKSong.swift in Sources */,
+				4653EB6F1E7D3ECF005D7FCF /* CKHTTPRequest.swift in Sources */,
 				4653EB391E7D3DEC005D7FCF /* AppDelegate.swift in Sources */,
+				4653EB6D1E7D3EBB005D7FCF /* CKHTTPResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +456,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CokeStudio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Abhishek.CokeStudio;
@@ -428,6 +469,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CokeStudio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Abhishek.CokeStudio;
