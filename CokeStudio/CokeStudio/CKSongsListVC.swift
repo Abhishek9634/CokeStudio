@@ -146,7 +146,6 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
                 print("DOWNLOAD FINISHED \(destinationFileUrl)")
                 
                 song.localURL = destinationFileUrl.path as NSString?
-                
             }
             DispatchQueue.main.async {
                 cell.playButton.isEnabled = (song.localURL != nil)
