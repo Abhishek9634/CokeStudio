@@ -1,0 +1,545 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4653EB391E7D3DEC005D7FCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653EB381E7D3DEC005D7FCF /* AppDelegate.swift */; };
+		4653EB3B1E7D3DEC005D7FCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653EB3A1E7D3DEC005D7FCF /* ViewController.swift */; };
+		4653EB3E1E7D3DEC005D7FCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4653EB3C1E7D3DEC005D7FCF /* Main.storyboard */; };
+		4653EB411E7D3DEC005D7FCF /* CokeStudio.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4653EB3F1E7D3DEC005D7FCF /* CokeStudio.xcdatamodeld */; };
+		4653EB431E7D3DEC005D7FCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4653EB421E7D3DEC005D7FCF /* Assets.xcassets */; };
+		4653EB461E7D3DEC005D7FCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4653EB441E7D3DEC005D7FCF /* LaunchScreen.storyboard */; };
+		4653EB511E7D3DEC005D7FCF /* CokeStudioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653EB501E7D3DEC005D7FCF /* CokeStudioTests.swift */; };
+		4653EB5C1E7D3DEC005D7FCF /* CokeStudioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653EB5B1E7D3DEC005D7FCF /* CokeStudioUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4653EB4D1E7D3DEC005D7FCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4653EB2D1E7D3DEB005D7FCF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4653EB341E7D3DEB005D7FCF;
+			remoteInfo = CokeStudio;
+		};
+		4653EB581E7D3DEC005D7FCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4653EB2D1E7D3DEB005D7FCF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4653EB341E7D3DEB005D7FCF;
+			remoteInfo = CokeStudio;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4653EB351E7D3DEC005D7FCF /* CokeStudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CokeStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4653EB381E7D3DEC005D7FCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4653EB3A1E7D3DEC005D7FCF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4653EB3D1E7D3DEC005D7FCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4653EB401E7D3DEC005D7FCF /* CokeStudio.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CokeStudio.xcdatamodel; sourceTree = "<group>"; };
+		4653EB421E7D3DEC005D7FCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4653EB451E7D3DEC005D7FCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4653EB471E7D3DEC005D7FCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4653EB4C1E7D3DEC005D7FCF /* CokeStudioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CokeStudioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4653EB501E7D3DEC005D7FCF /* CokeStudioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CokeStudioTests.swift; sourceTree = "<group>"; };
+		4653EB521E7D3DEC005D7FCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4653EB571E7D3DEC005D7FCF /* CokeStudioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CokeStudioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4653EB5B1E7D3DEC005D7FCF /* CokeStudioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CokeStudioUITests.swift; sourceTree = "<group>"; };
+		4653EB5D1E7D3DEC005D7FCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4653EB321E7D3DEB005D7FCF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4653EB491E7D3DEC005D7FCF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4653EB541E7D3DEC005D7FCF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4653EB2C1E7D3DEB005D7FCF = {
+			isa = PBXGroup;
+			children = (
+				4653EB371E7D3DEC005D7FCF /* CokeStudio */,
+				4653EB4F1E7D3DEC005D7FCF /* CokeStudioTests */,
+				4653EB5A1E7D3DEC005D7FCF /* CokeStudioUITests */,
+				4653EB361E7D3DEC005D7FCF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4653EB361E7D3DEC005D7FCF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4653EB351E7D3DEC005D7FCF /* CokeStudio.app */,
+				4653EB4C1E7D3DEC005D7FCF /* CokeStudioTests.xctest */,
+				4653EB571E7D3DEC005D7FCF /* CokeStudioUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4653EB371E7D3DEC005D7FCF /* CokeStudio */ = {
+			isa = PBXGroup;
+			children = (
+				4653EB381E7D3DEC005D7FCF /* AppDelegate.swift */,
+				4653EB3A1E7D3DEC005D7FCF /* ViewController.swift */,
+				4653EB3C1E7D3DEC005D7FCF /* Main.storyboard */,
+				4653EB421E7D3DEC005D7FCF /* Assets.xcassets */,
+				4653EB441E7D3DEC005D7FCF /* LaunchScreen.storyboard */,
+				4653EB471E7D3DEC005D7FCF /* Info.plist */,
+				4653EB3F1E7D3DEC005D7FCF /* CokeStudio.xcdatamodeld */,
+			);
+			path = CokeStudio;
+			sourceTree = "<group>";
+		};
+		4653EB4F1E7D3DEC005D7FCF /* CokeStudioTests */ = {
+			isa = PBXGroup;
+			children = (
+				4653EB501E7D3DEC005D7FCF /* CokeStudioTests.swift */,
+				4653EB521E7D3DEC005D7FCF /* Info.plist */,
+			);
+			path = CokeStudioTests;
+			sourceTree = "<group>";
+		};
+		4653EB5A1E7D3DEC005D7FCF /* CokeStudioUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4653EB5B1E7D3DEC005D7FCF /* CokeStudioUITests.swift */,
+				4653EB5D1E7D3DEC005D7FCF /* Info.plist */,
+			);
+			path = CokeStudioUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4653EB341E7D3DEB005D7FCF /* CokeStudio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4653EB601E7D3DEC005D7FCF /* Build configuration list for PBXNativeTarget "CokeStudio" */;
+			buildPhases = (
+				4653EB311E7D3DEB005D7FCF /* Sources */,
+				4653EB321E7D3DEB005D7FCF /* Frameworks */,
+				4653EB331E7D3DEB005D7FCF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CokeStudio;
+			productName = CokeStudio;
+			productReference = 4653EB351E7D3DEC005D7FCF /* CokeStudio.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4653EB4B1E7D3DEC005D7FCF /* CokeStudioTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4653EB631E7D3DEC005D7FCF /* Build configuration list for PBXNativeTarget "CokeStudioTests" */;
+			buildPhases = (
+				4653EB481E7D3DEC005D7FCF /* Sources */,
+				4653EB491E7D3DEC005D7FCF /* Frameworks */,
+				4653EB4A1E7D3DEC005D7FCF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4653EB4E1E7D3DEC005D7FCF /* PBXTargetDependency */,
+			);
+			name = CokeStudioTests;
+			productName = CokeStudioTests;
+			productReference = 4653EB4C1E7D3DEC005D7FCF /* CokeStudioTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4653EB561E7D3DEC005D7FCF /* CokeStudioUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4653EB661E7D3DEC005D7FCF /* Build configuration list for PBXNativeTarget "CokeStudioUITests" */;
+			buildPhases = (
+				4653EB531E7D3DEC005D7FCF /* Sources */,
+				4653EB541E7D3DEC005D7FCF /* Frameworks */,
+				4653EB551E7D3DEC005D7FCF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4653EB591E7D3DEC005D7FCF /* PBXTargetDependency */,
+			);
+			name = CokeStudioUITests;
+			productName = CokeStudioUITests;
+			productReference = 4653EB571E7D3DEC005D7FCF /* CokeStudioUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4653EB2D1E7D3DEB005D7FCF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Abhishek Thapliyal";
+				TargetAttributes = {
+					4653EB341E7D3DEB005D7FCF = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					4653EB4B1E7D3DEC005D7FCF = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4653EB341E7D3DEB005D7FCF;
+					};
+					4653EB561E7D3DEC005D7FCF = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4653EB341E7D3DEB005D7FCF;
+					};
+				};
+			};
+			buildConfigurationList = 4653EB301E7D3DEB005D7FCF /* Build configuration list for PBXProject "CokeStudio" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4653EB2C1E7D3DEB005D7FCF;
+			productRefGroup = 4653EB361E7D3DEC005D7FCF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4653EB341E7D3DEB005D7FCF /* CokeStudio */,
+				4653EB4B1E7D3DEC005D7FCF /* CokeStudioTests */,
+				4653EB561E7D3DEC005D7FCF /* CokeStudioUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4653EB331E7D3DEB005D7FCF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4653EB461E7D3DEC005D7FCF /* LaunchScreen.storyboard in Resources */,
+				4653EB431E7D3DEC005D7FCF /* Assets.xcassets in Resources */,
+				4653EB3E1E7D3DEC005D7FCF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4653EB4A1E7D3DEC005D7FCF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4653EB551E7D3DEC005D7FCF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4653EB311E7D3DEB005D7FCF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4653EB3B1E7D3DEC005D7FCF /* ViewController.swift in Sources */,
+				4653EB411E7D3DEC005D7FCF /* CokeStudio.xcdatamodeld in Sources */,
+				4653EB391E7D3DEC005D7FCF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4653EB481E7D3DEC005D7FCF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4653EB511E7D3DEC005D7FCF /* CokeStudioTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4653EB531E7D3DEC005D7FCF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4653EB5C1E7D3DEC005D7FCF /* CokeStudioUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4653EB4E1E7D3DEC005D7FCF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4653EB341E7D3DEB005D7FCF /* CokeStudio */;
+			targetProxy = 4653EB4D1E7D3DEC005D7FCF /* PBXContainerItemProxy */;
+		};
+		4653EB591E7D3DEC005D7FCF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4653EB341E7D3DEB005D7FCF /* CokeStudio */;
+			targetProxy = 4653EB581E7D3DEC005D7FCF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4653EB3C1E7D3DEC005D7FCF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4653EB3D1E7D3DEC005D7FCF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4653EB441E7D3DEC005D7FCF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4653EB451E7D3DEC005D7FCF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4653EB5E1E7D3DEC005D7FCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4653EB5F1E7D3DEC005D7FCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4653EB611E7D3DEC005D7FCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CokeStudio/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Abhishek.CokeStudio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		4653EB621E7D3DEC005D7FCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CokeStudio/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Abhishek.CokeStudio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		4653EB641E7D3DEC005D7FCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CokeStudioTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Abhishek.CokeStudioTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CokeStudio.app/CokeStudio";
+			};
+			name = Debug;
+		};
+		4653EB651E7D3DEC005D7FCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CokeStudioTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Abhishek.CokeStudioTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CokeStudio.app/CokeStudio";
+			};
+			name = Release;
+		};
+		4653EB671E7D3DEC005D7FCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = CokeStudioUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Abhishek.CokeStudioUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = CokeStudio;
+			};
+			name = Debug;
+		};
+		4653EB681E7D3DEC005D7FCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = CokeStudioUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Abhishek.CokeStudioUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = CokeStudio;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4653EB301E7D3DEB005D7FCF /* Build configuration list for PBXProject "CokeStudio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4653EB5E1E7D3DEC005D7FCF /* Debug */,
+				4653EB5F1E7D3DEC005D7FCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4653EB601E7D3DEC005D7FCF /* Build configuration list for PBXNativeTarget "CokeStudio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4653EB611E7D3DEC005D7FCF /* Debug */,
+				4653EB621E7D3DEC005D7FCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4653EB631E7D3DEC005D7FCF /* Build configuration list for PBXNativeTarget "CokeStudioTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4653EB641E7D3DEC005D7FCF /* Debug */,
+				4653EB651E7D3DEC005D7FCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4653EB661E7D3DEC005D7FCF /* Build configuration list for PBXNativeTarget "CokeStudioUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4653EB671E7D3DEC005D7FCF /* Debug */,
+				4653EB681E7D3DEC005D7FCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4653EB3F1E7D3DEC005D7FCF /* CokeStudio.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4653EB401E7D3DEC005D7FCF /* CokeStudio.xcdatamodel */,
+			);
+			currentVersion = 4653EB401E7D3DEC005D7FCF /* CokeStudio.xcdatamodel */;
+			path = CokeStudio.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4653EB2D1E7D3DEB005D7FCF /* Project object */;
+}
