@@ -40,8 +40,18 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.setUpNavigation()
     }
 
+    func setUpNavigation() {
+        
+        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white,
+                                                                        NSFontAttributeName: UIFont(name: "Helvetica", size: 18) as Any]
+        
+        self.navigationController!.navigationBar.barTintColor = UIColor(red: 233.0/255.0, green: 57.0/255.0, blue: 66.0/255.0, alpha: 1.0)
+        self.navigationController!.navigationBar.tintColor = UIColor.white
+    }
+    
     //====================================================================================================================================
     // TABLE VIEW DELEGATE & DATA SOURCE
     //====================================================================================================================================

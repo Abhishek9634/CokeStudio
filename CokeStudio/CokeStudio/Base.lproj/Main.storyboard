@@ -202,10 +202,10 @@
             </objects>
             <point key="canvasLocation" x="1712.8" y="138.98050974512745"/>
         </scene>
-        <!--Song DeatialVC-->
+        <!--Track-->
         <scene sceneID="gGo-h3-Rgw">
             <objects>
-                <viewController storyboardIdentifier="CKSongDeatialVC" id="kfh-Dm-jLK" customClass="CKSongDeatialVC" customModule="CokeStudio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CKSongDeatialVC" title="Track" id="kfh-Dm-jLK" customClass="CKSongDeatialVC" customModule="CokeStudio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gf9-CK-fAU"/>
                         <viewControllerLayoutGuide type="bottom" id="pMa-DM-bki"/>
