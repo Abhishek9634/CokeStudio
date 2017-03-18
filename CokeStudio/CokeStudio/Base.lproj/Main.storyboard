@@ -1,14 +1,21 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CKWelcomeVC" customModule="CokeStudio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,6 +28,176 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-106" y="139"/>
+        </scene>
+        <!--Songs ListVC-->
+        <scene sceneID="yMo-u2-07w">
+            <objects>
+                <viewController storyboardIdentifier="CKSongsListVC" id="Gh8-Kl-mTM" customClass="CKSongsListVC" customModule="CokeStudio" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C27-97-Y1F"/>
+                        <viewControllerLayoutGuide type="bottom" id="OBQ-4U-GWk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vu3-wf-KIQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="v11-SN-5JN">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="143" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hbo-ib-waj">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CKTableCell" rowHeight="138" id="lrQ-sy-0OX" customClass="CKTableCell" customModule="CokeStudio" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="138"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lrQ-sy-0OX" id="CFF-wz-TCc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mmf-wB-KKD">
+                                                    <rect key="frame" x="8" y="8" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="tYj-Ls-EVG"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2W-UD-JHx">
+                                                    <rect key="frame" x="8" y="99" width="321" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="MVn-yu-zkK"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GyY-ow-wMH">
+                                                    <rect key="frame" x="321" y="8" width="46" height="46"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="46" id="Ncv-tL-GWm"/>
+                                                    </constraints>
+                                                    <state key="normal" title="D"/>
+                                                    <connections>
+                                                        <action selector="downloadAction:" destination="lrQ-sy-0OX" eventType="touchDown" id="m8s-vX-U1R"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnF-1P-fMZ">
+                                                    <rect key="frame" x="267" y="8" width="46" height="46"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="46" id="Sy1-wx-xgs"/>
+                                                    </constraints>
+                                                    <state key="normal" title="P"/>
+                                                    <connections>
+                                                        <action selector="playAction:" destination="lrQ-sy-0OX" eventType="touchDown" id="Ue0-XT-3vO"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUQ-0H-IoO">
+                                                    <rect key="frame" x="86" y="8" width="173" height="70"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbi-qf-LDR">
+                                                    <rect key="frame" x="337" y="99" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="ItI-ud-Bxf"/>
+                                                    </constraints>
+                                                    <state key="normal" title="S"/>
+                                                    <connections>
+                                                        <action selector="favouriteAction:" destination="lrQ-sy-0OX" eventType="touchDown" id="0Zd-v6-0CO"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jUQ-0H-IoO" firstAttribute="top" secondItem="cnF-1P-fMZ" secondAttribute="top" id="9oR-L3-O7c"/>
+                                                <constraint firstItem="mmf-wB-KKD" firstAttribute="leading" secondItem="U2W-UD-JHx" secondAttribute="leading" id="Hjz-E2-80n"/>
+                                                <constraint firstItem="GyY-ow-wMH" firstAttribute="leading" secondItem="cnF-1P-fMZ" secondAttribute="trailing" constant="8" symbolic="YES" id="JqY-Uy-TkT"/>
+                                                <constraint firstItem="U2W-UD-JHx" firstAttribute="top" secondItem="mmf-wB-KKD" secondAttribute="bottom" constant="21" id="M2R-Qo-6az"/>
+                                                <constraint firstItem="mmf-wB-KKD" firstAttribute="top" secondItem="CFF-wz-TCc" secondAttribute="topMargin" id="M9P-FE-yRA"/>
+                                                <constraint firstItem="jUQ-0H-IoO" firstAttribute="leading" secondItem="mmf-wB-KKD" secondAttribute="trailing" constant="8" symbolic="YES" id="OnT-pB-be7"/>
+                                                <constraint firstItem="U2W-UD-JHx" firstAttribute="top" secondItem="tbi-qf-LDR" secondAttribute="top" id="PMb-RM-hul"/>
+                                                <constraint firstItem="mmf-wB-KKD" firstAttribute="bottom" secondItem="jUQ-0H-IoO" secondAttribute="bottom" id="PQT-0u-U2S"/>
+                                                <constraint firstItem="mmf-wB-KKD" firstAttribute="leading" secondItem="CFF-wz-TCc" secondAttribute="leadingMargin" id="UOs-ET-rAh"/>
+                                                <constraint firstItem="cnF-1P-fMZ" firstAttribute="leading" secondItem="jUQ-0H-IoO" secondAttribute="trailing" constant="8" symbolic="YES" id="Zdb-kQ-Uu6"/>
+                                                <constraint firstItem="U2W-UD-JHx" firstAttribute="top" secondItem="cnF-1P-fMZ" secondAttribute="bottom" constant="45" id="a8I-gT-PU6"/>
+                                                <constraint firstItem="GyY-ow-wMH" firstAttribute="trailing" secondItem="CFF-wz-TCc" secondAttribute="trailingMargin" id="dre-eH-1sJ"/>
+                                                <constraint firstItem="GyY-ow-wMH" firstAttribute="baseline" secondItem="cnF-1P-fMZ" secondAttribute="firstBaseline" id="hDm-ik-oFH"/>
+                                                <constraint firstItem="cnF-1P-fMZ" firstAttribute="baseline" secondItem="GyY-ow-wMH" secondAttribute="firstBaseline" id="hRp-Hn-NRQ"/>
+                                                <constraint firstItem="U2W-UD-JHx" firstAttribute="bottom" secondItem="CFF-wz-TCc" secondAttribute="bottomMargin" id="pTT-cJ-huX"/>
+                                                <constraint firstItem="mmf-wB-KKD" firstAttribute="top" secondItem="jUQ-0H-IoO" secondAttribute="top" id="qWA-Oa-mGb"/>
+                                                <constraint firstItem="cnF-1P-fMZ" firstAttribute="top" secondItem="GyY-ow-wMH" secondAttribute="top" id="tXR-YP-BSL"/>
+                                                <constraint firstItem="GyY-ow-wMH" firstAttribute="trailing" secondItem="tbi-qf-LDR" secondAttribute="trailing" id="vpV-Qt-Yll"/>
+                                                <constraint firstItem="tbi-qf-LDR" firstAttribute="leading" secondItem="U2W-UD-JHx" secondAttribute="trailing" constant="8" symbolic="YES" id="ywm-Bi-ioG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="downloadButton" destination="GyY-ow-wMH" id="fvC-c8-vjf"/>
+                                            <outlet property="favouriteButton" destination="tbi-qf-LDR" id="hgv-L2-fc1"/>
+                                            <outlet property="playButton" destination="cnF-1P-fMZ" id="5AR-y3-9q2"/>
+                                            <outlet property="songImgView" destination="mmf-wB-KKD" id="RyD-tP-11h"/>
+                                            <outlet property="songName" destination="jUQ-0H-IoO" id="gpC-nM-6ze"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="v11-SN-5JN" firstAttribute="leading" secondItem="vu3-wf-KIQ" secondAttribute="leading" id="E0h-Dp-4cP"/>
+                            <constraint firstItem="hbo-ib-waj" firstAttribute="bottom" secondItem="OBQ-4U-GWk" secondAttribute="top" id="GpH-ip-Oxp"/>
+                            <constraint firstItem="hbo-ib-waj" firstAttribute="top" secondItem="v11-SN-5JN" secondAttribute="bottom" id="NGl-RE-R1e"/>
+                            <constraint firstItem="v11-SN-5JN" firstAttribute="leading" secondItem="hbo-ib-waj" secondAttribute="leading" id="OTR-n3-YS6"/>
+                            <constraint firstItem="v11-SN-5JN" firstAttribute="trailing" secondItem="hbo-ib-waj" secondAttribute="trailing" id="euI-8D-OuE"/>
+                            <constraint firstItem="v11-SN-5JN" firstAttribute="top" secondItem="C27-97-Y1F" secondAttribute="bottom" id="jH4-Pz-vGP"/>
+                            <constraint firstAttribute="trailing" secondItem="v11-SN-5JN" secondAttribute="trailing" id="lLd-f6-G5c"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="z0Y-vE-U0K"/>
+                    <connections>
+                        <outlet property="songSearchBar" destination="v11-SN-5JN" id="KjT-5Z-y1P"/>
+                        <outlet property="songTableView" destination="hbo-ib-waj" id="4a9-WU-5XN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GHP-SW-5AC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1712.8" y="138.98050974512745"/>
+        </scene>
+        <!--Song DeatialVC-->
+        <scene sceneID="gGo-h3-Rgw">
+            <objects>
+                <viewController storyboardIdentifier="CKSongDeatialVC" id="kfh-Dm-jLK" customClass="CKSongDeatialVC" customModule="CokeStudio" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gf9-CK-fAU"/>
+                        <viewControllerLayoutGuide type="bottom" id="pMa-DM-bki"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mqg-rI-eLr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DrS-YR-by7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2570" y="139"/>
+        </scene>
+        <!--NavigationVC-->
+        <scene sceneID="cq3-qB-yIa">
+            <objects>
+                <navigationController storyboardIdentifier="CKNavigationVC" automaticallyAdjustsScrollViewInsets="NO" id="0X9-Jb-BU2" customClass="CKNavigationVC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sun-nT-XFe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Gh8-Kl-mTM" kind="relationship" relationship="rootViewController" id="pLW-8A-8XS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xRk-BK-WOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="773.60000000000002" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>

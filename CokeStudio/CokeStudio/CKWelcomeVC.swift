@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CKWelcomeVC.swift
 //  CokeStudio
 //
 //  Created by Abhishek Thapliyal on 3/18/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CKWelcomeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
