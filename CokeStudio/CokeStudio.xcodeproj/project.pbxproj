@@ -23,6 +23,7 @@
 		4675BD1A1E7D448200B4BF8B /* CKTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4675BD191E7D448200B4BF8B /* CKTableCell.swift */; };
 		4675BD1C1E7D459700B4BF8B /* CKSongsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4675BD1B1E7D459700B4BF8B /* CKSongsListVC.swift */; };
 		4675BD1E1E7D45F700B4BF8B /* CKSongDeatialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4675BD1D1E7D45F700B4BF8B /* CKSongDeatialVC.swift */; };
+		4675BD211E7D62FB00B4BF8B /* CKUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4675BD201E7D62FB00B4BF8B /* CKUtility.swift */; };
 		828F0D83DC95E3EB20BA1552 /* Pods_CokeStudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3294FB482146FE14F142F1 /* Pods_CokeStudio.framework */; };
 		AE29DABC78EFD46328639215 /* Pods_CokeStudioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB24A0D40B34EF0E08132E3E /* Pods_CokeStudioTests.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		4675BD191E7D448200B4BF8B /* CKTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKTableCell.swift; sourceTree = "<group>"; };
 		4675BD1B1E7D459700B4BF8B /* CKSongsListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKSongsListVC.swift; sourceTree = "<group>"; };
 		4675BD1D1E7D45F700B4BF8B /* CKSongDeatialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKSongDeatialVC.swift; sourceTree = "<group>"; };
+		4675BD201E7D62FB00B4BF8B /* CKUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKUtility.swift; sourceTree = "<group>"; };
 		4A57AC693F14B3C52BF1A1DF /* Pods-CokeStudioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CokeStudioTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CokeStudioTests/Pods-CokeStudioTests.debug.xcconfig"; sourceTree = "<group>"; };
 		519B9002E9FE9F36706B5D45 /* Pods-CokeStudioUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CokeStudioUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CokeStudioUITests/Pods-CokeStudioUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5D0D00AB2B454C028013EB86 /* Pods-CokeStudioUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CokeStudioUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CokeStudioUITests/Pods-CokeStudioUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				4653EB3A1E7D3DEC005D7FCF /* CKWelcomeVC.swift */,
 				4675BD1B1E7D459700B4BF8B /* CKSongsListVC.swift */,
 				4675BD1D1E7D45F700B4BF8B /* CKSongDeatialVC.swift */,
+				4675BD201E7D62FB00B4BF8B /* CKUtility.swift */,
 			);
 			name = CKViewController;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				4653EB6F1E7D3ECF005D7FCF /* CKHTTPRequest.swift in Sources */,
 				4653EB391E7D3DEC005D7FCF /* AppDelegate.swift in Sources */,
 				4653EB6D1E7D3EBB005D7FCF /* CKHTTPResponse.swift in Sources */,
+				4675BD211E7D62FB00B4BF8B /* CKUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

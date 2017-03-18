@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import AVFoundation
 
 class CKSongDeatialVC: UIViewController {
 

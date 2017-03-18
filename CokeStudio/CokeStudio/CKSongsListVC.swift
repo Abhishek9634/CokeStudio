@@ -108,6 +108,10 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
         cell.favouriteButton?.setImage(image, for: .normal)
     }
     
+    internal func didTapPlaybutton(cell: CKTableCell) {
+        
+    }
+    
     //====================================================================================================================================
     // SEARCH BAR DELEGATE
     //====================================================================================================================================
