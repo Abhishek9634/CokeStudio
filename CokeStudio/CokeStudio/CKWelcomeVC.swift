@@ -10,6 +10,9 @@ import UIKit
 
 class CKWelcomeVC: UIViewController {
 
+    
+    @IBOutlet weak var openButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,9 +26,15 @@ class CKWelcomeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.openButton?.layer.cornerRadius = 5
+        self.openButton?.layer.masksToBounds = true
+    }
+
+    @IBAction func openButtonAction(_ sender: Any) {
+        
         CKNetworkManager().getSongs { (arrayList, error) in
             
-             DispatchQueue.main.async {
+            DispatchQueue.main.async {
                 let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
                 let navigationVC = storyBoard.instantiateViewController(withIdentifier: "CKNavigationVC") as! UINavigationController
                 
@@ -37,6 +46,6 @@ class CKWelcomeVC: UIViewController {
             }
         }
     }
-
+    
 }
 

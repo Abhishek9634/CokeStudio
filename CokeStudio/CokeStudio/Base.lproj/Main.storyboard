@@ -22,12 +22,38 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wall" translatesAutoresizingMaskIntoConstraints="NO" id="g1f-4S-1ez">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1u-5h-iHe">
+                                <rect key="frame" x="124" y="573" width="126" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.88235294117647056" green="0.054901960784313725" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
+                                <state key="normal" title="Let's Play">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="openButtonAction:" destination="BYZ-38-t0r" eventType="touchDown" id="5K0-KC-N6z"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="g1f-4S-1ez" secondAttribute="trailing" id="F3N-WI-rb1"/>
+                            <constraint firstItem="g1f-4S-1ez" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="R1G-tJ-psX"/>
+                            <constraint firstItem="g1f-4S-1ez" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aQB-Al-KDU"/>
+                            <constraint firstItem="g1f-4S-1ez" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="aZg-Eg-Nyr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="openButton" destination="h1u-5h-iHe" id="kb3-OE-IL2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-106" y="139"/>
+            <point key="canvasLocation" x="-106.40000000000001" y="138.98050974512745"/>
         </scene>
         <!--Songs ListVC-->
         <scene sceneID="yMo-u2-07w">
@@ -310,5 +336,6 @@
         <image name="play-arrow" width="32" height="32"/>
         <image name="rewind" width="32" height="32"/>
         <image name="stop" width="32" height="32"/>
+        <image name="wall" width="506" height="900"/>
     </resources>
 </document>
