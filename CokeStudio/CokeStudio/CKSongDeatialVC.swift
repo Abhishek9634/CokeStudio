@@ -60,6 +60,16 @@ class CKSongDeatialVC: UIViewController {
     //====================================================================================================================================
     
     @IBAction func rewindAction(_ sender: Any) {
+        
+        var time = (self.audioPlayerObj?.currentTime)! as TimeInterval
+        time = time - 3.0;
+        if (time <= 0)
+        {
+            time = 0;
+        }
+        else{
+            self.audioPlayerObj?.currentTime = time;
+        }
     }
     
     @IBAction func playAction(_ sender: Any) {
@@ -75,5 +85,15 @@ class CKSongDeatialVC: UIViewController {
     }
    
     @IBAction func forwardAction(_ sender: Any) {
+        
+        var time = (self.audioPlayerObj?.currentTime)! as TimeInterval
+        time = time + 3.0;
+        if (time > (self.audioPlayerObj?.duration)!)
+        {
+            self.audioPlayerObj?.stop()
+        }
+        else{
+            self.audioPlayerObj?.currentTime = time;
+        }
     }
 }
