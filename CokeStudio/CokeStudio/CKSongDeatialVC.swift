@@ -13,6 +13,8 @@ import AVFoundation
 class CKSongDeatialVC: UIViewController {
 
     public var song : CKSong?
+    public var audioPlayer : AVAudioPlayer?
+    
     @IBOutlet weak var songName: UILabel?
     @IBOutlet weak var artistsName: UILabel?
     @IBOutlet weak var songImage: UIImageView?
@@ -20,7 +22,15 @@ class CKSongDeatialVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let rawURL : NSString = (self.song?.localURL != nil ? self.song?.localURL : self.song?.url)!
+        let songURL = NSURL(string : rawURL as String)
+        
+        do {
+            self.audioPlayer = try AVAudioPlayer(contentsOf: songURL as! URL)
+        }
+        catch let error as NSError {
+            print("URL ERROR \(error), \(error.userInfo)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,17 +49,23 @@ class CKSongDeatialVC: UIViewController {
         }
     }
     
+    //====================================================================================================================================
+    // MUSIC BUTTON ACTIONS
+    //====================================================================================================================================
     
     @IBAction func rewindAction(_ sender: Any) {
     }
     
     @IBAction func playAction(_ sender: Any) {
+        self.audioPlayer?.play()
     }
     
     @IBAction func pauseAction(_ sender: Any) {
+        self.audioPlayer?.pause()
     }
     
     @IBAction func stopAction(_ sender: Any) {
+        self.audioPlayer?.stop()
     }
    
     @IBAction func forwardAction(_ sender: Any) {

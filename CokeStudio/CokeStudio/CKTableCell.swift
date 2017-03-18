@@ -8,6 +8,10 @@
 
 import UIKit
 
+//====================================================================================================================================
+// CELL DELEGATES
+//====================================================================================================================================
+
 protocol CKTableCellDelegate: class {
     func didTapFavouriteButton(cell: CKTableCell)
     func didTapPlaybutton(cell: CKTableCell)
@@ -35,6 +39,10 @@ class CKTableCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    //====================================================================================================================================
+    // CELL BUTTON ACTIONS
+    //====================================================================================================================================
     
     @IBAction func playAction(_ sender: Any) {
         self.delegate?.didTapPlaybutton(cell: self)
