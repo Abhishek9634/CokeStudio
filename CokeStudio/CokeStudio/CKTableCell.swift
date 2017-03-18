@@ -19,6 +19,7 @@ class CKTableCell: UITableViewCell {
     @IBOutlet weak var downloadButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var favouriteButton: UIButton!
+    @IBOutlet weak var artistLabel: UILabel!
     
     
     weak var delegate: CKTableCellDelegate?

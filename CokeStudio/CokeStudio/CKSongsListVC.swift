@@ -72,6 +72,8 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
             tableCell.songImgView?.sd_setImage(with: imageURL as URL!, placeholderImage: UIImage(named: "music_default.png"))
         }
         
+        tableCell.artistLabel.text = song.artists as String?
+        
         tableCell.favouriteButton?.setImage(image, for: .normal)
         
         return tableCell
