@@ -38,7 +38,7 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-    
+
     //====================================================================================================================================
     // TABLE VIEW DELEGATE & DATA SOURCE
     //====================================================================================================================================
@@ -97,20 +97,30 @@ class CKSongsListVC: UIViewController, UISearchBarDelegate, UITableViewDelegate,
     internal func didTapFavouriteButton(cell: CKTableCell) {
         
         let indexPath = self.songTableView.indexPath(for: cell)
-        let player = filteredList?.object(at: (indexPath?.row)!) as! CKSong
-        player.favourite = !(player.favourite!)
+        let song = filteredList?.object(at: (indexPath?.row)!) as! CKSong
+        song.favourite = !(song.favourite!)
         var image = UIImage(named: "favourite_default.png")
         
-        if ((player.favourite!)) {
+        if ((song.favourite!)) {
             image = UIImage(named: "favourite_set.png")
         }
         
         cell.favouriteButton?.setImage(image, for: .normal)
     }
     
-    internal func didTapPlaybutton(cell: CKTableCell) {
+    internal func didTapPlayButton(cell: CKTableCell) {
         
     }
+    
+    internal func didTapDownloadButton(cell: CKTableCell) {
+        
+    }
+    
+    //====================================================================================================================================
+    // SONG DOWNLOAD TASK
+    //====================================================================================================================================
+    
+
     
     //====================================================================================================================================
     // SEARCH BAR DELEGATE

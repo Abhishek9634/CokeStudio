@@ -14,7 +14,8 @@ import UIKit
 
 protocol CKTableCellDelegate: class {
     func didTapFavouriteButton(cell: CKTableCell)
-    func didTapPlaybutton(cell: CKTableCell)
+    func didTapPlayButton(cell: CKTableCell)
+    func didTapDownloadButton(cell: CKTableCell)
 }
 
 class CKTableCell: UITableViewCell {
@@ -45,10 +46,11 @@ class CKTableCell: UITableViewCell {
     //====================================================================================================================================
     
     @IBAction func playAction(_ sender: Any) {
-        self.delegate?.didTapPlaybutton(cell: self)
+        self.delegate?.didTapPlayButton(cell: self)
     }
     
     @IBAction func downloadAction(_ sender: Any) {
+        self.delegate?.didTapDownloadButton(cell: self)
     }
 
     @IBAction func favouriteAction(_ sender: Any) {
